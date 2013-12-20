@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    {{promises.pager(format='$link_first $link_previous ~2~ $link_next $link_last')}}
+    <table>
+      <thead>
+	<tr>
+	  <th>Id</th>
+	  <th>Title</th>
+	  <th>Status</th>
+	</tr>
+      </thead>
+      <tbody>
+	{% for p in promises.items %}
+	<tr>
+	  <td>{{p.number}}</td>
+	  <td>
+	    <a href="{{p.html_url}}">
+	      {{p.title}}
+	    </a>
+	  </td>
+	  <td>{{p.state}}</td>
+	</tr>
+	{% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
